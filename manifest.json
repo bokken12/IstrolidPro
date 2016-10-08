@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "IstrolidPro",
+  "description": "This extension adds functionality to the game Istrolid",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Type shift T to toggle color changing."
+  },
+  "permissions": [
+    "tabs",
+    "http://www.istrolid.com/game.html"
+  ],
+  "content_scripts" : [{
+    "matches" : [ "http://www.istrolid.com/game.html" ],
+    "js" : ["starter.js"]
+  }],
+  "web_accessible_resources": ["script.js"],
+  "background": {
+    "persistent": false,
+    "scripts": ["script.js"]
+  }
+}
