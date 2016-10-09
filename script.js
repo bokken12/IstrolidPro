@@ -4,6 +4,7 @@ if(window == top){
 change_colors = false;
 color_key = 67; //c
 toggle_key = 84; //t
+ai_key = 65; //a
 function randomInt(min, max){
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -32,6 +33,13 @@ function doKeyPress(e) {
     	if(change_colors){
     		recurse_colors();
     	}
+    } else if(e.keyCode == ai_key){
+      if (localStorage.useAi !== "true") {
+        localStorage.useAi = "true";
+      } else {
+        localStorage.useAi = "false";
+        designMode.aiEdit = false;
+      }
     }
   }
 }
